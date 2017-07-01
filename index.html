@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	  <title>HexGridder</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">HexGridder</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">Hex Builder</div>
+          <div class="panel-body">
+            <form id="hexgenerator">
+              <div class="col-sm-6 col-md-3 form-group">
+                <label>Columns</label>
+                <input type="text" id="columns" class="form-control" placeholder="Columns">
+              </div>
+              <div class="col-sm-6 col-md-3 form-group">
+                <label>Rows</label>
+                <input type="text" id="rows" class="form-control" placeholder="Rows">
+              </div>
+              <div class="col-sm-6 col-md-3 form-group">
+                <label>Width</label>
+                <input type="text" id="width" class="form-control" placeholder="Width">
+              </div>
+              <div class="col-sm-6 col-md-3 form-group">
+                <label>Height</label>
+                <input type="text" id="height" class="form-control" placeholder="Height">
+              </div>
+
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <button type="button" class="btn btn-sm btn-default" data-toggle="collapse" data-target="#advanced">Toggle Advanced Options</button>
+                </div>
+
+                <div id="advanced" class="row collapse">
+                  <div class="col-sm-6 col-md-3 form-group">
+                    <label>Colour</label>
+                    <input type="text" id="colour" class="form-control" placeholder="Colour">
+                  </div>
+                  <div class="col-sm-6 col-md-3 form-group">
+                    <label>Hover Colour</label>
+                    <input type="text" id="hoverColour" class="form-control" placeholder="Hover Colour">
+                  </div>
+                  <div class="col-sm-6 col-md-3 form-group">
+                    <label>Selected Colour</label>
+                    <input type="text" id="selectedColour" class="form-control" placeholder="Selected Colour">
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <button type="submit" class="btn btn-default pull-right">Generate</button>
+              </div>
+				    </form>
+          </div>
+        </div>
+			</div>
+			<div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">Hex Grid</div>
+          <div class="panel-body">
+            <div class="hex-container">
+              <p class="text-center">Press 'Generate' to create your hex grid.</p>
+            </div>
+          </div>
+        </div>
+			</div>
+		</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/hex.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

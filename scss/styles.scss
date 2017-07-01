@@ -1,0 +1,66 @@
+//Hex Stuff
+$hexWidth: 50px; //Height to Width: Height * 1.7333333333333.
+$hexHeight: $hexWidth * 0.57692307692308; //Width to Height: Width * 0.57692307692308.
+$hexWidthHalf: $hexWidth / 2;
+$hexHeightHalf: $hexHeight / 2;
+$hexSpacing: 3px;
+$hexColor: #4286f4;
+$hexHoverColor: #72a8ff;
+
+@mixin base-hex() {
+	content: " ";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: $hexWidthHalf solid transparent;
+	border-right: $hexWidthHalf solid transparent;
+}
+
+.hex-container {
+	float: left;
+	width: 100%;
+	
+	.hex-row {
+		float: left;
+		clear: both;
+		
+		&:nth-child(2n+0) {
+			margin-left: $hexWidthHalf + 1;
+			margin-top: $hexSpacing;
+			margin-bottom: $hexSpacing;
+		}
+		
+		.hex {
+			position: relative;
+			float: left;
+			margin-left: $hexSpacing;
+			margin-top: $hexHeightHalf;
+			width: $hexWidth;
+			height: $hexHeight;
+			background-color: $hexColor;
+			border-bottom-color: $hexColor;
+			border-top-color: $hexColor;
+			
+			&:before {
+				@include base-hex();
+
+				top: -$hexHeightHalf;
+				border-bottom: $hexHeightHalf solid;
+				border-bottom-color: inherit;
+			}
+			&:after {
+				@include base-hex();
+				
+				bottom: -$hexHeightHalf;
+				border-top: $hexHeightHalf solid;
+				border-top-color: inherit;
+			}
+			
+			&:hover {
+				background-color: $hexHoverColor;
+				border-top-color: $hexHoverColor;
+				border-bottom-color: $hexHoverColor;
+			}
+		}
+	}
+}

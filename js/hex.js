@@ -10,6 +10,8 @@ var Hex = (function () {
 
 	var styleElement;
 
+	var mouseDown = false;
+	
 	function generateFromForm(e) {
 		e.preventDefault();
 		
@@ -121,8 +123,18 @@ var Hex = (function () {
 	}
 
 	function initClickEvents() {
-		$('.hex').on('click', function (e) {
+		$('.hex').mousedown(function() {
+			mouseDown = true;
 			$(this).toggleClass('selected');
+		})
+		$(document).mouseup(function() {
+			mouseDown = false;
+		});
+		
+		$(".hex").mouseover(function(){
+			if(mouseDown) {
+				$(this).toggleClass('selected');
+			}
 		});
 	}
 

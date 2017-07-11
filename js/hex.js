@@ -1,7 +1,7 @@
 var Hex = (function () {
 	var width = 50;
 	var height = 28.84615;
-	var columns = 10;
+	var columns = 20;
 	var rows = 4;
 	var hexMargin = 3;
 	var colour = '#4286f4';
